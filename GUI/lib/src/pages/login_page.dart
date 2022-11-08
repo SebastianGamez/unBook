@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../styles/buttons_style.dart';
 import 'package:un_book/src/repositories/firebase_api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,7 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
   final FirebaseApi _firebaseApi = FirebaseApi();
 
   final TextEditingController _email = TextEditingController();
@@ -92,11 +92,15 @@ class _LoginPageState extends State<LoginPage> {
       } else if (result == 'network-request-failed') {
         message = 'Verifica tu conexión a la red';
       } else {
+        
+        final preferences = await SharedPreferences.getInstance();
+        preferences.setString('id', result!);
+
+        _showMessage(message);
         _homePageRedirect();
+        
       }
     }
-
-    _showMessage(message);
   }
 
   void _homePageRedirect() {

@@ -12,8 +12,8 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _createCard(Colors.deepPurpleAccent, Icons.find_in_page_sharp, 'Explorar', 'Encuentra libros de tu interés', 'search', context),
-          _createCard(Colors.blueAccent, Icons.my_library_books, 'Generos', 'Visualiza libros por género', 'genders', context),
+          _createCard(Colors.deepPurpleAccent, Icons.find_in_page_sharp, 'Explorar', 'Encuentra libros de tu interés', 'explore', context),
+          _createCard(Colors.blueAccent, Icons.my_library_books, 'Géneros', 'Visualiza libros por género', 'genders', context),
           _createCard(Colors.redAccent, Icons.bookmarks, 'Favoritos', 'Busca entre tus selecciones', 'favorites', context)
         ],
       ),
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
             title: Text(
               title,
               style: const TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 28
               )
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
             subtitle: Text(
               description,
               style: const TextStyle(
-                color: Colors.black
+                color: Colors.white70
               )
             ),
           ),
