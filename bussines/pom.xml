@@ -14,7 +14,7 @@
 	<name>unBook</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -50,7 +50,11 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>6.1.5.Final</version>
 		</dependency>
-
+		<dependency>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>spring-dotenv</artifactId>
+			<version>4.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

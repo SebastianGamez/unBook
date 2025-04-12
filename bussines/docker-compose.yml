@@ -1,0 +1,12 @@
+# Description: Docker Compose file for production environment
+# Author: Sebastián Gámez Ariza
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
